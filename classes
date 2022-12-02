@@ -1,0 +1,108 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+class student
+{
+    public:
+        int getAge()
+        {
+            return age;
+        }
+        string getName()
+        {
+            return name;
+        }
+        int getAvgpoint()
+        {
+            return avgpoint;
+        }
+        void setAge(int age_)
+        {
+            if (age_ <= 50)
+            {
+                age = age_;
+            }
+            else
+            {
+                cout << name << " starper" << endl;
+            }
+        }
+        void setAvgpoint(int avgpoint_)
+        {
+            if (avgpoint_ > 2)
+            {
+                avgpoint = avgpoint_;
+            }
+            else
+            {
+                cout << name << " bidlo" << endl;
+            }
+        }
+        void pobotat()
+        {
+            avgpoint++;
+            cout << name << " i'm drochu progu" << endl;
+        }
+        // int AVGpoint()
+        // {
+
+        // }
+        student(int age_, string name_, int avgpoint_)
+        {
+            setAge(age_);
+            setAvgpoint(avgpoint_);
+            name = name_;
+           
+            cout << name << " was born" << endl;
+        }
+        ~student()
+        {
+            cout << name << " is died" << endl;
+        }
+    private:
+        int age = -1 ;
+        string name;
+        int avgpoint = 0;
+};
+int main()
+{//vector changes size they copies ??
+    vector <student> v;
+    v.reserve(10);
+    // string name;
+    // int age, avgpoint;
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     cout << "name" << endl;
+    //     cin >> name;
+    //     cout << "age" << endl;
+    //     cin >> age;
+    //     cout << "avgpoint" << endl;
+    //     student v[i]()
+    // }
+    string name = "nam";
+    int age = 1;
+    int avgpoint = 3;
+    student A(age, name, avgpoint);
+    student B(30, "gg", 4);
+    student C(55, "dum", 7);
+    student D(30, "ou", 10);
+    v[0] = A;
+    v[0].pobotat();
+    v[0].pobotat();
+    v[1] = B;
+    v[1].pobotat();
+    v[2] = C;
+    v[3] = D;
+    int sumpoint = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        sumpoint += v[i].getAvgpoint();
+    }
+    cout << v[0].getAvgpoint() << endl;
+    cout << v[1].getAvgpoint() << endl;
+    cout << sumpoint << endl;
+    // A.pobotat(name, avgpoint);
+    
+
+}
